@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("fonts/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url("fonts/Pretendard-Bold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: "Pretendard-Regular", sans-serif;
+  color: #1d1d1d;
+  padding: 0px;
+  margin: 0px;
+}
+
+button.btn-default {
+  color: #fff;
+}
+
+button.btn-default:hover,
+button.btn-default:active,
+button.btn-default:focus {
+  color: #fff;
+}
+
+button.btn-default.focus,
+button.btn-default:focus {
+  outline: 0;
+  box-shadow: none;
+}
