@@ -33,46 +33,27 @@
       href="js/font-awesome/css/font-awesome.min.css?ver=2401231"
     />
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/youtube.css" rel="stylesheet" />
     <script
       type="text/javascript"
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
     ></script>
-    <script
-      type="text/javascript"
-      src="js/jquery.youtube-background.js?v=1.1.2"
-    ></script>
-    <script
-      type="text/javascript"
-      src="js/youtube-background-experimental.js?v=1.1.2"
-    ></script>
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="/img/heart_wh.png" />
+    <link rel="shortcut icon" href="" />
   </head>
   <body>
     <!-- Swiper JS -->
     <div class="container-full">
       <main>
+        <div class="video-area">
+          <video autoplay muted loop playsinline>
+            <source src="./video/main.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div class="example-marquee">
-          <div
-            id="vbg2"
-            data-vbg-mute-button="true"
-            data-vbg-play-button="true"
-            data-vbg-resolution="4:3"
-            data-vbg="https://www.youtube.com/watch?v=94GsQrn634c"
-          ></div>
-          <!--<div
-            id="vbg2"
-            data-vbg-end-at="10.25"
-            data-vbg-mute-button="true"
-            data-vbg-play-button="true"
-            data-vbg-resolution="4:3"
-            data-vbg="https://www.youtube.com/watch?v=_bcd9boEj4A"
-          ></div>-->
           <div class="content">
             <div class="inner">
-              <h1>숑넨 웹진 : 非-평행</h1>
+              <!-- <h1>숑넨 웹진 : 非-평행</h1> -->
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button
                   type="button"
@@ -101,7 +82,6 @@
         </div>
       </main>
     </div>
-    <script src="./js/youtube.js"></script>
     <script src="./js/swiper-bundle.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
