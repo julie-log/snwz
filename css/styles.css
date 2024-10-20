@@ -19,6 +19,14 @@ body {
   padding: 0px;
   margin: 0px;
   background-color: #000;
+  overflow: hidden;
+}
+main {
+  background-image: url(../images/background_img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
 }
 video {
   max-width: 100%;
@@ -60,4 +68,53 @@ button.btn-default.focus,
 button.btn-default:focus {
   outline: 0;
   box-shadow: none;
+}
+.main-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding: 25px 0;
+}
+.circle {
+  position: absolute;
+}
+.circle1 {
+  top: 0;
+  right: 0;
+  width: 150px;
+}
+.circle2 {
+  top: 120px;
+  left: -80px;
+  width: 150px;
+}
+.circle3 {
+  bottom: 70px;
+  right: -110px;
+  width: 200px;
+}
+
+.icon-moon {
+  width: 265px;
+}
+.text-logo {
+  width: 120px;
+}
+.icon-star {
+  width: 40px;
+}
+.menu {
+  width: 55px;
+}
+.menu-a {
+  width: 40px;
+}
+.menu-f {
+  width: 65px;
+}
+
+.text-subtit {
+  width: 320px;
 }
