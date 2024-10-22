@@ -20,7 +20,9 @@ body {
   margin: 0px;
   background-color: #000;
   overflow: hidden;
+  over-flow-x: hidden;
 }
+
 main {
   background-image: url(../images/background_img.png);
   background-repeat: no-repeat;
