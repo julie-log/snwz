@@ -84,16 +84,19 @@ button.btn-default:focus {
   top: 0;
   right: 0;
   width: 150px;
+  animation: slow-rotate 10s linear infinite; /* 10초 동안 천천히 회전 */
 }
 .circle2 {
   top: 120px;
   left: -80px;
   width: 150px;
+  animation: slow-rotate 15s linear infinite; /* 15초 동안 더 천천히 회전 */
 }
 .circle3 {
   bottom: 70px;
   right: -110px;
   width: 200px;
+  animation: slow-rotate 20s linear infinite; /* 20초 동안 가장 천천히 회전 */
 }
 
 .icon-moon {
@@ -117,4 +120,29 @@ button.btn-default:focus {
 
 .text-subtit {
   width: 320px;
+}
+
+/* 회전 애니메이션 정의 */
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg); /* 처음 상태 */
+  }
+  to {
+    transform: rotate(360deg); /* 360도 회전 */
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  /* Styles for screens smaller than or equal to 1180px */
+  body {
+    background-color: black;
+  }
+  .main-area {
+    max-width: 780px;
+    position: relative;
+    margin: 0 auto;
+  }
+  .text-logo {
+    width: 180px;
+  }
 }
