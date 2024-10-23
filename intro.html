@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="user-scalable=0" />
+    <meta
+      content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- 카카오톡 인스타그램 미리보기(meta 정보) 설정 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="숑넨 웹진 : 非-평행" />
+    <meta property="og:description" content="숑넨 웹진 : 非-평행" />
+
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <!-- 트위터 미리보기(meta 정보) 설정 -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="숑넨 웹진 : 非-평행" />
+    <meta name="twitter:description" content="숑넨 웹진 : 非-평행" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="/js/font-awesome/css/font-awesome.min.css?ver=2401231"
+    />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+    ></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="" />
+
+    <style>
+      /* 초기 상태 */
+      .video-area,
+      .main-area {
+        opacity: 1;
+        transition: opacity 1s ease; /* 1초 동안의 페이드 인/아웃 효과 */
+      }
+
+      /* 비디오 영역 숨기기 (페이드 아웃) */
+      .hidden {
+        opacity: 0;
+      }
+
+      /* 메인 영역 보이기 (페이드 인) */
+      .showing {
+        opacity: 1 !important;
+      }
+
+      .main-area {
+        opacity: 0; /* 처음엔 메인 영역 숨기기 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-area">
+      <video autoplay muted playsinline id="intro-video">
+        <source src="/video/intro.mp4" type="video/mp4" />
+      </video>
+    </div>
+    
+    <script src="./js/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("intro-video");
+
+  if (video) {
+    video.addEventListener("ended", () => {
+      console.log("Video has ended.");
+      window.location.href = "index.html";
+    });
+
+    // Fallback in case the ended event doesn't fire
+    setTimeout(() => {
+      console.log("Safety timeout triggered.");
+      window.location.href = "index.html";
+    }, 8000); // Adjust time to fit the length of your video
+  } else {
+    console.error("Video element not found!");
+  }
+});
+    </script>
+  </body>
+</html>

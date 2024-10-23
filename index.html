@@ -51,34 +51,24 @@
 
     <style>
       /* 초기 상태 */
-      .video-area,
-      .main-area {
-        opacity: 1;
-        transition: opacity 1s ease; /* 1초 동안의 페이드 인/아웃 효과 */
-      }
+.video-area,
+.main-area {
+  opacity: 1;
+  transition: opacity 1s ease; /* 1초 동안의 페이드 인/아웃 효과 */
+}
 
-      /* 비디오 영역 숨기기 (페이드 아웃) */
-      .hidden {
-        opacity: 0;
-      }
+/* 메인 영역 숨기기 (페이드 아웃 초기 상태) */
+.main-area {
+  opacity: 0; /* 처음엔 메인 영역 숨기기 */
+}
 
-      /* 메인 영역 보이기 (페이드 인) */
-      .showing {
-        opacity: 1 !important;
-      }
-
-      .main-area {
-        opacity: 0; /* 처음엔 메인 영역 숨기기 */
-      }
+/* 메인 영역 보이기 (페이드 인) */
+.main-area.showing {
+  opacity: 1 !important;
+}
     </style>
   </head>
   <body>
-    <!-- Swiper JS -->
-    <div class="video-area">
-      <video autoplay muted playsinline>
-        <source src="./video/intro.mp4" type="video/mp4" />
-      </video>
-    </div>
     <main class="main-area">
       <img src="images/logo.png" class="text text-logo" />
       <img src="images/icon1.png" class="icon icon-star" />
@@ -100,34 +90,22 @@
     <script src="./js/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 비디오가 끝난 후 실행되는 함수
-        function transitionAreas() {
-          const videoArea = document.querySelector(".video-area");
-          const mainArea = document.querySelector(".main-area");
-          const circleElements = document.querySelectorAll(".circle");
+       document.addEventListener("DOMContentLoaded", function () {
+  const mainArea = document.querySelector(".main-area");
+  const circleElements = document.querySelectorAll(".circle");
 
-          // 비디오 영역을 페이드 아웃시키고, 메인 영역을 페이드 인
-          videoArea.classList.add("hidden");
-          mainArea.classList.add("showing");
+  // 메인 영역을 페이드 인 처리
+  setTimeout(() => {
+    mainArea.classList.add("showing");
+  }, 500); // 페이지 로드 후 0.5초 뒤에 페이드 인 시작
 
-          // 일정 시간 후 비디오 영역을 완전히 숨김
-          setTimeout(() => {
-            videoArea.style.display = "none";
-          }, 1000); // 1초 후 비디오 완전 숨김
-
-          setTimeout(() => {
-            // 각 요소에 대해 반복 작업 (forEach)
-            circleElements.forEach((element) => {
-              // hidden 클래스를 제거하여 요소를 보이게 함
-              element.classList.remove("hidden");
-            });
-          }, 1000);
-        }
-
-        // 5초 후에 비디오가 사라지고 메인 화면이 나타나도록 설정
-        setTimeout(transitionAreas, 8000); // 5000ms = 5초
-      });
+  // 원소들을 보여주기 위해 hidden 클래스 제거
+  setTimeout(() => {
+    circleElements.forEach((element) => {
+      element.classList.remove("hidden");
+    });
+  }, 1500); // 메인 영역 페이드 인 후에 원소들 표시
+});
     </script>
   </body>
 </html>
