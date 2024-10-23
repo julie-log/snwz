@@ -107,13 +107,13 @@ button.btn-default:focus {
 }
 
 .icon-moon {
-  width: 265px;
+  width: 225px;
 }
 .text-logo {
   width: 120px;
 }
 .icon-star {
-  width: 40px;
+  width: 25px;
 }
 .menu {
   width: 55px;
@@ -151,5 +151,11 @@ button.btn-default:focus {
   }
   .text-logo {
     width: 180px;
+  }
+  .icon-moon {
+    width: 265px;
+  }
+  .icon-star {
+    width: 30px;
   }
 }
