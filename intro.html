@@ -78,16 +78,25 @@
   const video = document.getElementById("intro-video");
 
   if (video) {
-    video.addEventListener("ended", () => {
-      console.log("Video has ended.");
-      window.location.href = "index.html";
-    });
+    // 비디오가 완전히 로드된 후 실행되는 이벤트
+    video.addEventListener("canplaythrough", () => {
+      console.log("Video is fully loaded.");
 
-    // Fallback in case the ended event doesn't fire
-    setTimeout(() => {
-      console.log("Safety timeout triggered.");
-      window.location.href = "index.html";
-    }, 8000); // Adjust time to fit the length of your video
+      // 비디오가 끝나면 페이지 이동
+      video.addEventListener("ended", () => {
+        console.log("Video has ended.");
+        window.location.href = "index.html";
+      });
+
+      // 추가 안전 장치: 비디오 길이의 110% 후에 페이지 이동 (예: 비디오 길이가 8초라면 8.8초 후 이동)
+      const safetyTimeout = video.duration * 1.1 * 1000;
+      setTimeout(() => {
+        if (!video.ended) {
+          console.log("Safety timeout triggered.");
+          window.location.href = "index.html";
+        }
+      }, safetyTimeout);
+    });
   } else {
     console.error("Video element not found!");
   }

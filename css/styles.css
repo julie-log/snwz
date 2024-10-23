@@ -91,19 +91,19 @@ button.btn-default:focus {
   top: 0;
   right: 0;
   width: 150px;
-  animation: slow-rotate 10s linear infinite; /* 10초 동안 천천히 회전 */
+  animation: slow-rotate 10s linear infinite; 
 }
 .circle2 {
   top: 120px;
   left: -80px;
   width: 150px;
-  animation: slow-rotate 15s linear infinite; /* 15초 동안 더 천천히 회전 */
+  animation: slow-rotate 15s linear infinite; 
 }
 .circle3 {
   bottom: 70px;
   right: -110px;
   width: 200px;
-  animation: slow-rotate 20s linear infinite; /* 20초 동안 가장 천천히 회전 */
+  animation: slow-rotate 20s linear infinite; 
 }
 
 .icon-moon {
